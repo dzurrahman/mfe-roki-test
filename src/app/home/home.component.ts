@@ -25,7 +25,12 @@ export class HomeComponent implements OnInit {
     this.test = await Device.getInfo();
     this.test2 = await Device.getLanguageCode();
 
-    
   }
+
+  setStorage() {
+    localStorage.setItem('mfe', this.phone) 
+  }
+
+
 
 }
