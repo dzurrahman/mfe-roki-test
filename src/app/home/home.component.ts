@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   test: any;
   test2: any;
+  phone!: any;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 

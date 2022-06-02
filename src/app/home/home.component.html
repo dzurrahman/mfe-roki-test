@@ -11,9 +11,11 @@
         <div class="d-flex flex-column">
           <h3>Angular</h3>
           <h5>Version : {{ version }}</h5>
+          <input type="text" class="form-control mb-3" [(ngModel)]="phone" name="phone" placeholder="input disini"/>
           <span class="py-2 alert alert-danger"> {{ title }}</span>
           <span class="py-2 alert alert-success"> {{ test | json }} </span>
           <span class="py-2 alert alert-success"> {{ test2 | json }} </span>
+          <span class="py-2 alert alert-success"> {{ phone | mask: '(000) 000-0000'}} </span>
           <button class="btn btn-primary m-2" [routerLink]="['/']">
             Back To Home
           </button>
@@ -22,3 +24,4 @@
     </div>
   </div>
 </div>
+
