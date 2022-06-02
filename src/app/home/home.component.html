@@ -28,3 +28,15 @@
   </div>
 </div>
 
+<div>
+  <button class="btn btn-warning m-2" (click)="takePhoto()">
+    takePhoto
+  </button>
+  <img *ngIf="photo"
+          class="m-2"
+          [src]="photo"
+          height="200"
+          alt=""
+        />
+</div>
+

@@ -1,7 +1,19 @@
 import { Component, OnInit, VERSION } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Device } from '@capacitor/device';
+import { Camera, CameraResultType } from '@capacitor/camera';
 
+
+const takePicture = async () => {
+  const image = await Camera.getPhoto({
+    quality: 90,
+    allowEditing: true,
+    resultType: CameraResultType.Uri
+  });
+  const imageUrl = image.webPath;
+  console.log(image)
+  return imageUrl
+};
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,6 +26,7 @@ export class HomeComponent implements OnInit {
   test: any;
   test2: any;
   phone!: any;
+  photo!: any;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
@@ -29,6 +42,10 @@ export class HomeComponent implements OnInit {
 
   setStorage() {
     localStorage.setItem('mfe', this.phone) 
+  }
+
+  async takePhoto() {
+    this.photo = await takePicture()
   }
 
 
