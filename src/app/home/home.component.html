@@ -1,26 +1,24 @@
 <div class="d-flex">
-    <div class="container p-3">
-      <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-        <div class="d-flex">
-          <img
-            class="m-2"
-            src="https://angular.io/assets/images/logos/angular/shield-large.svg"
-            height="100"
-            alt=""
-          />
-          <div>
-            <h3>Angular</h3>
-            <h5>Version : {{ version }}</h5>
-            <div class="my-2">
-                <span class="py-2 alert alert-danger"> {{ title }}</span>
-                
-                <span class="py-2 alert alert-sucess"> {{ test | json }} </span>
-                <span class="py-2 alert alert-sucess"> {{ test2 | json }} </span>
-            </div>
-            <button class="btn btn-primary m-2" [routerLink]="['/']">Back To Home</button>
-          </div>
+  <div class="container p-3">
+    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+      <div class="d-flex">
+        <img
+          class="m-2"
+          src="https://angular.io/assets/images/logos/angular/shield-large.svg"
+          height="100"
+          alt=""
+        />
+        <div class="d-flex flex-column">
+          <h3>Angular</h3>
+          <h5>Version : {{ version }}</h5>
+          <span class="py-2 alert alert-danger"> {{ title }}</span>
+          <span class="py-2 alert alert-success"> {{ test | json }} </span>
+          <span class="py-2 alert alert-success"> {{ test2 | json }} </span>
+          <button class="btn btn-primary m-2" [routerLink]="['/']">
+            Back To Home
+          </button>
         </div>
       </div>
     </div>
   </div>
-  
+</div>
