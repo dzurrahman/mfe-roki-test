@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   title!: string
 
   test: any;
+  test2: any;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 
@@ -21,6 +22,7 @@ export class HomeComponent implements OnInit {
     })
 
     this.test = await Device.getInfo();
+    this.test2 = await Device.getLanguageCode();
 
     
   }
