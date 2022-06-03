@@ -5,6 +5,11 @@ const routes: Routes = [
   {
     path: 'angular13',
     loadChildren: () => import('./angular13.module').then( m => m.Angular13Module )
+  },
+  {
+    path: '',
+    redirectTo: 'angular13/home',
+    pathMatch: 'full'
   }
 ];
 
