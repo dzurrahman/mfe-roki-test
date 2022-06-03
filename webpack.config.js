@@ -32,7 +32,7 @@ module.exports = {
         name: "angular13",
         filename: "remoteEntry.js",
         exposes: {
-            './HomeModule': './/src/app/home/home.module.ts',
+            './Angular13Module': './/src/app/angular13.module.ts',
         },        
         
         // For hosts (please adjust)

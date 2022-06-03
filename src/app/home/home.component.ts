@@ -1,5 +1,5 @@
 import { Component, OnInit, VERSION } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Device } from '@capacitor/device';
 import { Camera, CameraResultType } from '@capacitor/camera';
 
@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
   phone!: any;
   photo!: any;
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
 
   async ngOnInit() {
     this.activatedRoute?.params?.subscribe( (res: any) => {
@@ -40,12 +40,23 @@ export class HomeComponent implements OnInit {
 
   }
 
-  setStorage() {
+  async setStorage() {
     localStorage.setItem('mfe', this.phone) 
   }
 
   async takePhoto() {
     this.photo = await takePicture()
+  }
+
+  goNav(route: string) {
+    this.router
+      .navigate([route])
+      .then((res) => {
+        console.log('res :', res);
+      })
+      .catch((err) => {
+        console.log('error :', err);
+      });
   }
 
 
